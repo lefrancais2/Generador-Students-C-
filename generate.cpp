@@ -43,16 +43,9 @@ string convertString(string line,string ciudad,string cursos,string lista){
     strcpy(course,cursos.c_str());
     strcpy(list,lista.c_str());
 
-    // for(int i = 0; i < results.size(); i++){
-    //     cout << results[i] << endl;
-    // }
     char buffer[300];
     
-    //sprintf(buffer,"new Student('%s',[\"Math\",\"Frances\"],'%s','%s')\n",name,mail,city);
     sprintf(buffer,"%s(new Student('%s',[\"%s\"],'%s','%s'));",list,name,course,mail,city);
-    //printf("%s",buffer);
-    //cout << strlen(buffer) << endl;
-    //string linea(strlen(buffer),buffer);
     string linea;
     linea += buffer;
     return linea;
@@ -74,11 +67,6 @@ int main(){
     inFile.open("texto.txt");
     if(inFile.is_open()){
         while(getline(inFile,line)){
-            // cout << rand()%8<<endl;
-            // cout << line << "\n";
-            // line += ";" + ciudades[rand()%8]+"\n";
-            // cout << line << endl;
-            //cout << convertString(line,ciudades[rand()%8]) << endl;
             numRan = rand()%3;
             numRandVector = rand()%8;
 
@@ -101,7 +89,6 @@ int main(){
                 break;
             }
 
-            //cout << "linea " << linea << endl;
         }
         inFile.close();
         listA.close();
